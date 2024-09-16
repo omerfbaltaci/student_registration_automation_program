@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Classes.StudentController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane prefHeight="404.0" prefWidth="320.0" styleClass="left-form" stylesheets="@loginDesign.css">
+               <children>
+                  <ImageView fitHeight="279.0" fitWidth="265.0" layoutX="30.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../png/logo2.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+            <AnchorPane layoutX="320.0" prefHeight="404.0" prefWidth="320.0" styleClass="right-form" stylesheets="@loginDesign.css">
+               <children>
+                  <Label layoutX="66.0" layoutY="100.0" text="Student Login">
+                     <font>
+                        <Font name="Catamaran SemiBold" size="31.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="idtextline" layoutX="50.0" layoutY="209.0" prefHeight="30.0" prefWidth="220.0" promptText="Student ID" styleClass="textfield" stylesheets="@loginDesign.css" />
+                  <PasswordField fx:id="passwordtextline" layoutX="50.0" layoutY="251.0" prefHeight="30.0" prefWidth="220.0" promptText="Password" styleClass="textfield" stylesheets="@loginDesign.css" />
+                  <Button fx:id="loginbutton" layoutX="70.0" layoutY="330.0" mnemonicParsing="false" onAction="#login" prefHeight="20.0" prefWidth="180.0" styleClass="login-btn" stylesheets="@loginDesign.css" text="Login" />
+                  <Button fx:id="switchbutton" layoutX="89.0" layoutY="165.0" mnemonicParsing="false" onAction="#switchToAdmin" prefHeight="30.0" prefWidth="142.0" styleClass="switch-btn" text="Switch Admin Login">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="81.0" layoutY="-8.0" opacity="0.88" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../png/student.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="studentlabel" alignment="CENTER" layoutX="14.0" layoutY="291.0" prefHeight="27.0" prefWidth="287.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
