@@ -9,6 +9,7 @@ The **Student Registration Automation Program** is a user-friendly application d
 - **Admin Login**:
   - Create, update, and delete student records.
   - Modify student scores.
+  - Temporarily save new scores in `tempstudentinfo.txt` and finalize changes by updating `studentinfo.txt`.
 - **Student Login**:
   - View the scores of all students.
   - Change the student's own password.
@@ -16,11 +17,19 @@ The **Student Registration Automation Program** is a user-friendly application d
   - Default admin credentials are stored in the `adminusers.txt` file.
   - Users can add or modify admin accounts via this file.
 
+## File Management
+
+- **adminusers.txt**: Stores admin usernames and passwords in the format `Username,Password` (e.g., `Taner,123`).
+- **users.txt**: Stores student usernames and passwords in the same format as `adminusers.txt`.
+- **studentinfo.txt**: Contains the registered student names and their scores in the format `student_name,x,x,x,x,x`, where each `x` represents a score of one lecture in order.
+- **tempstudentinfo.txt**: Used for temporarily saving changes to student scores. When the admin finalizes updates, `studentinfo.txt` is overwritten by `tempstudentinfo.txt`.
+
 ## How It Works
 
 1. **Admin Login**: 
    - Admins must log in using the credentials from the `adminusers.txt` file.
    - After logging in, the admin can create new student records, update existing ones, delete records, and modify student scores.
+   - Any changes to student scores are first saved in `tempstudentinfo.txt`. When the admin clicks "Update," the changes are finalized by renaming `tempstudentinfo.txt` to `studentinfo.txt`.
    
 2. **Student Login**:
    - A student can only log in after an admin has added their record.
@@ -28,7 +37,8 @@ The **Student Registration Automation Program** is a user-friendly application d
    
 3. **Data Persistence**:
    - Admin credentials are stored in `adminusers.txt`.
-   - Student records, including scores, are stored within the system and can be updated or deleted by the admin.
+   - Student credentials are stored in `users.txt`.
+   - Student records, including scores, are stored in `studentinfo.txt`. Admins can temporarily modify scores in `tempstudentinfo.txt` before finalizing the changes.
 
 ## File Structure
 
@@ -39,8 +49,10 @@ student_registration_automation_program/
 │   └── StudentRegistrationAutomation.jar    # The executable JAR file to launch the application
 │
 ├── adminusers.txt                           # Stores admin login credentials
+├── users.txt                                # Stores student login credentials
+├── studentinfo.txt                          # Stores student records and their scores
+├── tempstudentinfo.txt                      # Temporary file used when updating student scores
 ├── README.md                                # Project documentation
-└── LICENSE                                  # License file
 ```
 
 ## Getting Started
@@ -88,7 +100,7 @@ student_registration_automation_program/
 ### Example Student Login
 
 1. Log in as an admin first to create a new student.
-2. After adding the student, use the student’s credentials to log in and view scores.
+2. After adding the student, use the student’s credentials from `users.txt` to log in and view scores.
 
 ## Contributing
 
@@ -101,3 +113,9 @@ If you'd like to contribute to this project, feel free to fork the repository an
 3. Make your changes and commit them: `git commit -m 'Add feature'`.
 4. Push to the branch: `git push origin feature-name`.
 5. Submit a pull request.
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+This version incorporates the details of the text files (`users.txt`, `studentinfo.txt`, and `tempstudentinfo.txt`) and how they interact with the program. Let me know if everything looks good!
